@@ -1,74 +1,211 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+
+
 <head>
-    {{! Document Settings }}
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  {{! Document Settings }}
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
-    {{!Page Meta }}
-    <title>{{meta_title}}</title>
-    <meta name="description" content="{{meta_description}}"/>
-    <meta name="HandheldFriendly" content="True"/>
-    <meta name="MobileOptimized" content="320"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  {{!Page Meta }}
+  <title>{{meta_title}}</title>
+  <meta name="description" content="{{meta_description}}"/>
+  <meta name="HandheldFriendly" content="True"/>
+  <meta name="MobileOptimized" content="320"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    {{! Style'n' Scripts }}
-    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway:400,700"/>
-    <link rel="stylesheet" type="text/css" href="{{asset "css/custom.css"}}"/>
+  {{! Styles }}
+  <link href="//fonts.googleapis.com/css?family=Signika:300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="https://d13ivt4xtv9021.cloudfront.net/assets/public.css"/>
+  <link rel="stylesheet" type="text/css" href="{{asset "css/custom.css"}}"/>
+  
+  <link rel="shortcut icon" href="https://d13ivt4xtv9021.cloudfront.net/assets/favicon-c00aa772502210908d5408ec291eb325.png">
+  <link rel="apple-touch-icon" href="https://d13ivt4xtv9021.cloudfront.net/assets/apple-touch-icon-289bfc3c0c57c034501b5e55891feff2.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="https://d13ivt4xtv9021.cloudfront.net/assets/apple-touch-icon-72x72-ce550ef0c8c1feb269828965995e6a52.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="https://d13ivt4xtv9021.cloudfront.net/assets/apple-touch-icon-114x114-fdebc1201a02edb0e2d3ddfec1da3926.png">
 
-    {{! Ghost outputs important style and meta data with this tag }}
-    {{ghost_head}}
+  {{! JavaScript }}
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+  <script type="text/javascript" src="https://d13ivt4xtv9021.cloudfront.net/assets/public.js"></script>
+
+  {{! Ghost outputs important style and meta data with this tag }}
+  {{ghost_head}}
 </head>
 <body class="{{body_class}}">
+  <nav>
+    <div class="nav-bar" style="height: 100px;">
+      <div class="container">
+        <div class="four columns alpha main-logo">
+          <a href="https://www.goodmouth.com">
+            <img src="https://d13ivt4xtv9021.cloudfront.net/assets/logos/GoodMouth_Logo_Large-c1ce2708be130f44bab6abbeb4c8249a.png" alt="GoodMouth" title="GoodMouth Logo" class= "scale">
+          </a>
+        </div><!-- eight / logo -->
+      
+        <div id="desktop-nav">
+          <div class="ten columns" style="margin-right: -30px; margin-left: 0px;">
+            <ul class="group mobile-center nav-top" id="main-nav">
+              <li class="nav-space" style="display: none; width: 0px;"><a href="#"></a></li>
+              <li class="nav-space"><a href="https://www.goodmouth.com/how-it-works/everyone/">How it Works</a></li>
+              <li class="nav-space"><a href="https://www.goodmouth.com/shop-products/">Shop Products</a></li>
+              <li class="nav-space current_page_item"><a href="https://www.goodmouth.com/dentistry/">Dental Practices</a></li>
+              <li class="nav-space"><a href="https://www.goodmouth.com/giving-goodness/">Giving Back</a></li>
+              <li class="nav-space"><a href="https://www.goodmouth.com/our-brushes/find-the-best-toothbrush/">Brush Suggester</a></li>
+            </ul>
+          </div> <!-- ten desktop-nav -->
+          <div class="three columns sign-up-top">
+            <a id="drawer-text" class="login-link-text" href="https://www.goodmouth.com/users/sign_in">LOGIN</a> <a href="https://www.goodmouth.com/signup/" class="nav-sign-up-button secondary-button-med upper" style="margin-left: 10px;">Sign Up</a>
+          </div>
+        </div>
+      </div>         <!-- container -->
+    </div>        <!-- nav-bar -->
+  </nav>
 
-{{! Everything else gets inserted here }}
-<div class="container">
-    <div class="site-wrapper">
-        <div class="site-wrapper-inner">
-            <div class="cover-container">
-                <div class="masthead clearfix">
-                    <div class="inner">
-                        <h3 class="masthead-brand">{{@blog.title}}</h3>
-                        {{navigation}}
-                    </div>
-                </div>
-                {{{body}}}
+  <div class="dark-blue-solid-skinny subnav">
+    <div class="container center" >
+      <a href="https://www.goodmouth.com/dentistry/">
+        <div class="three columns subnav-col fade">
+          Overview
+        </div>
+      </a>	
+      <a href="https://www.goodmouth.com/dentistry/subscriptions/">
+        <div class="five columns subnav-col fade">
+          Patient Subscriptions
+        </div>
+      </a>
+      <a href="http://dentistry-blog.goodmouth.com/">
+        <div class="five columns subnav-col fade subnav-active">
+          Dentistry Blog
+        </div>
+      </a>
+      <a href="https://www.goodmouth.com/dentistry/get-started/">
+        <div class="three columns subnav-col fade">
+          Get Started
+        </div>
+      </a>
+    </div>
+  </div>
 
+  {{{body}}}
+
+  <div class="blue-solid" id="contact-us">
+    <div class="container">
+
+      <div class="sixteen columns add-bottom mobile-add-top20">
+        <h4>Request Information &amp; Demo</h4>
+        <div class="header-row"></div>
+    
+        <p>
+          You can reach us anytime at <a href="mailto:dentistry@goodmouth.com">dentistry@goodmouth.com</a> or by phone at 855-312-3232. Or submit your information below and we’ll contact you
+          right away. We have a <a href="https://www.goodmouth.com/dentistry/no-pressure-sales-promise/">No Pressure Sales Promise</a>, so you never have to worry about annoying or pushy sales tactics.
+        </p>
+
+        <div class="sixteen columns add-top" id="contactus_form_submitted" style="display: none;">
+          <div class="center">
+            <h3>Thanks!</h3>
+            <p>We'll be in touch soon.</p>
+          </div>
+        </div>
+    
+        <iframe id="hidden_iframe" name="hidden_iframe" style="display: none;"></iframe>
+        <form action="https://docs.google.com/forms/d/1mmCN2O76O55eu-5deT-tWJAVDiGV9_n1dJ5Kb-4d5fs/formResponse" method="POST" id="ss-form" onsubmit="$('#contactus_contact_form').toggle(); $('#contactus_form_submitted').toggle();" target="hidden_iframe">
+
+          <div id="contactus_contact_form">
+            <div class="eight columns alpha">
+              <input class="white-field form-space" type="name" name="entry.1179952276" placeholder="Name*" id="entry_1179952276" dir="auto">
+              <br class="half-top" />			
+              <input class="white-field form-space" type="name" name="entry.1473789220" placeholder="Email*" id="entry_1473789220" dir="auto">
+            </div><!-- eight -->
+
+            <div class="eight columns omega">
+              <input class="white-field form-space" type="name" name="entry.620485396" placeholder="Phone Number*" id="entry_620485396" dir="auto">
+              <input type="hidden" name="entry.514911628" id="entry_514911628" value="Dentistry Blog">
+
+              <input type="hidden" name="draftResponse" value="[]">
+              <input type="hidden" name="pageHistory" value="0">
+
+              <div class="four columns offset-by-four half-top right">
+                <button id="ss-submit" type="submit" name="submit" class="primary-button-med center upper most-full-width" >SEND</button>
+              </div>
             </div>
-        </div>
+          </div>
+        </form>	
+      </div>
     </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <footer class="site-footer">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <a href="{{@blog.url}}/rss/"><span class="glyphicon glyphicon-plane"></span> Subscribe</a>
+  </div>
 
-                        <div class="text-muted">
-                            <section class="copyright">All content copyright <a href="/">{{@blog.title}}</a> &copy;
-                                2015 &bull; All rights reserved.
-                            </section>
-                            <section class="poweredby">Proudly published with <a href="http://ghost.org">Ghost</a>
-                            </section>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </div>
-    </div>
-</div>
 
-{{! Ghost outputs important scripts and data with this tag }}
-{{ghost_foot}}
+  <br class="clear" />
+  <div class="container" id="site-footer">
+    <div class="sixteen columns">
+      <div class="three columns alpha">
+        <h6>HOW IT WORKS</h6>
+        <ul>
+          <li><a class="footer" href="https://www.goodmouth.com/shop-products/">Shop Products</a></li>
+          <li><a class="footer" href="https://www.goodmouth.com/our-brushes/find-the-best-toothbrush/">Brush Suggester</a></li>
+          <li><a class="footer" href="https://www.goodmouth.com/how-it-works/everyone/">How it Works</a></li>
+          <li><a class="footer" href="https://www.goodmouth.com/how-it-works/what-people-are-saying">Reviews</a></li>
+          <li><a class="footer" href="https://www.goodmouth.com/dentistry/">Dental Practices</a></li>
+          <li><a class="footer" href="https://www.goodmouth.com/corporate-benefits/">Corporate Benefits</a></li>
+        </ul>
+      </div>
+    
+      <div class="three columns omega">
+        <h6>ABOUT US</h6>
+        <ul>
+          <li><a class="footer" href="https://www.goodmouth.com/about-us/">Our Story</a></li>
+          <li><a class="footer" href="https://www.goodmouth.com/our-team/">Our Team</a></li>
+          <li><a class="footer" href="https://www.goodmouth.com/jobs/">Careers</a></li>
+        </ul>
+      </div>
+      <div class="three columns omega">
+        <h6>GIVING BACK</h6>
+        <ul>
+          <li><a class="footer" href="https://www.goodmouth.com/giving-goodness/">Giving Goodness</a></li>
+          <li><a class="footer" href="https://www.goodmouth.com/giving-goodness/specifics/">Specifics</a></li>
+        </ul>
+      </div>
 
-{{! The main JavaScript file for Readable }}
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="{{asset "js/jquery.bootstrap-autohidingnavbar.min.js"}}"></script>
-<script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+      <div class="three columns offset-by-four omega right">
 
+        <ul>
+          <li><a class="footer" href="https://www.goodmouth.com/faq/">FAQ</a></li>
+          <li><a class="footer" href="https://www.goodmouth.com/contact-us/">Contact Us</a></li>
+          <li><a class="footer" href="https://www.goodmouth.com/white-paper/">White Paper</a></li>
+          <li><a class="footer" href="https://www.goodmouth.com/press/">Press</a></li>
+          <li><a class="footer" href="http://blog.goodmouth.com" target="_new">Blog</a></li>
+          <li><a class="footer" href="https://www.goodmouth.com/affiliates/">Affiliates</a></li>
+          <li><a class="footer" href="https://www.goodmouth.com/refer-a-friend/">Refer a Friend</a></li>
+        </ul>
+      </div>
+    </div><!-- sixteen columns -->
+        
+    <br class="clear">
+        
+    <div class="sixteen columns add-bottom">
+      <div class="nine columns alpha half-top">
+        <p class="made-in-usa strong">Proudly Built in the USA</p>
+        Copyright 2015 GoodMouth, Inc. <a href="https://www.goodmouth.com/legal/privacy-policy/">Privacy Policy</a> | <a href="https://www.goodmouth.com/legal/terms-and-conditions/">Terms &amp; Conditions</a>
+      </div>
+      <div class="four columns omega right">
+        <ul class="in-line half-space">
+          <li><a href="http://www.facebook.com/JoinGoodMouth" target="_blank" onclick="_gaEvent('link', 'click', 'footer-facebook');"><div class="facebook">&nbsp;</div></a></li>
+          <li><a href="http://www.pinterest.com/joingoodmouth/" target="_blank" onclick="_gaEvent('link', 'click', 'footer-pinterest');"><div class="pinterest">&nbsp;</div></a></li>
+          <li><a href="http://www.twitter.com/JoinGoodMouth" target="_blank" onclick="_gaEvent('link', 'click', 'footer-twitter');"><div class="twitter">&nbsp;</div></a></li>
+        </ul>
+      </div>
+      <div class="three columns omega right">
+        <a title="GoodMouth, Inc. BBB Business Review" href="http://www.bbb.org/new-york-city/business-reviews/dental-equipment-and-supplies/goodmouth-inc-in-mount-kisco-ny-146514/#bbbonlineclick" target="_blank"><img alt="GoodMouth, Inc. BBB Business Review" style="border: 0;" src="https://seal-newyork.bbb.org/seals/black-seal-96-50-goodmouth-inc-146514.png" /></a>
+      </div>
+    </div><!-- sixteen columns -->
+  </div><!-- container -->
+
+  {{! Ghost outputs important scripts and data with this tag }}
+  {{ghost_foot}}
 
 </body>
 </html>

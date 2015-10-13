@@ -1,20 +1,39 @@
 {{!< default}}
 
-
-{{#foreach posts}}
-  <div class="inner cover post post-head">
-    <h1 class="cover-heading post-title"><a href="{{url}}">{{{title}}}</a></h1>
+<div class="beige-solid">
+  <div class="container">
+    <div class="sixteen columns">
+      <div class="center double-top add-bottom add-more-bottom">
+        <h1 class="helvetica purple-font"><strong>Delight Your Patients, Increase Revenue</strong></h1>
+        <h3 class="helvetica purple-font">Discussions on Dental Practice Marketing &amp; Management</h3>
+      </div>
+    </div>
   </div>
-
-<div class="inner cover post post-body">
-{{excerpt}}
-</div>
-{{/foreach}}
-
-
-{{!! After all the posts, we have the previous/next pagination links }}
-{{pagination}}
-
-<div class="inner cover container post post-foot">
 </div>
 
+<div class="container">
+  <div class="sixteen columns">
+
+    {{#foreach posts}}
+      <div class="post-listing">
+        <div class="post-listing-title"><a href="{{url}}">{{{title}}}</a></div>
+
+        <div class="post-excerpt half-bottom">
+          <a href="{{url}}">{{excerpt}}...</a>
+        </div>
+
+        <div class="small half-bottom gray-font">
+          Posted {{date format="YYYY-MM-DD"}}
+        </div>
+
+      </div>
+    {{/foreach}}
+
+
+    <div class="center add-top add-bottom gray-font">
+      {{!! After all the posts, we have the previous/next pagination links }}
+      {{pagination}}
+    </div>
+    
+  </div>
+</div>

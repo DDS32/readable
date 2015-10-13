@@ -1,16 +1,22 @@
 {{!< default}}
 
 {{#post}}
-    <div class="inner cover post post-head">
-        <h1 class="cover-heading post-title">{{{title}}}</h1>
-    </div>
+  <div class="beige-solid">
+    <div class="container">
+      <div class="sixteen columns">
+        {{#if image}}
+          <div class="center add-top add-bottom">
+        {{else}}
+          <div class="center double-top add-bottom add-more-bottom">
+        {{/if}}
 
-    <div class="inner cover post post-body">
-        {{content}}
-    </div>
+          <h1 class="post-title helvetica purple-font"><strong>{{{title}}}</strong></h1>
 
-    <div class="inner cover container post post-foot">
-        <div class="post-foot-right">
+          <div class="small">
+            Posted <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='MMM DD YYYY'}}</time>
+          </div>
+
+          <div class="half-top">
             <a href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}"
                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                 <i class="fa fa-twitter"></i>
@@ -23,22 +29,33 @@
                onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                 <i class="fa fa-google-plus-square"></i>
             </a>
-        </div>
-    </div>
-    <hr style="margin-bottom:5px"/>
-    <div class="inner cover container post post-foot footer-info text-muted">
-        {{! Everything inside the #author tags pulls data from the author }}
-        {{#author}}
-            <div class="post-foot-left">
-                <a href="{{url}}">{{name}}</a>
+          </div>
+          
+          {{#if image}}
+            <div class="add-top">
+              <img src="{{image}}" class="scale"/>
             </div>
-        {{/author}}
-        <div class="post-foot-right">
-            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time>
+          {{/if}}
+
         </div>
-        <div>
-            <!--{{#if tags}}<code class="tag">{{tags separator="</code> <code class=\"tag\">"}}</code>{{/if}}-->
-            {{#if tags}}TAGGED IN {{tags separator=", "}}{{/if}}
-        </div>
+      </div>
     </div>
+  </div>
+
+  <div class="container">
+    <div class="sixteen columns">
+
+      <div class="post add-top">
+        {{content}}
+      </div>
+  
+      <hr style="margin-bottom:5px"/>
+      <div class="post post-foot">
+        <div>
+          <!--{{#if tags}}<code class="tag">{{tags separator="</code> <code class=\"tag\">"}}</code>{{/if}}-->
+          {{#if tags}}Categories: {{tags separator=", "}}{{/if}}
+        </div>
+      </div>
+    </div>
+  </div>    
 {{/post}}
